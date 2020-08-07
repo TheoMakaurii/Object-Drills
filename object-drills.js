@@ -3,11 +3,11 @@
 const loaf = {
   flour: 300,
   water: 210,
-  hydration: function(water) {
-    
+  hydration: function (water) {
+
 
     return (this.water * .25) * 100;
-     
+
   }
 
 };
@@ -23,21 +23,28 @@ let band = {
   sound4: 'quux',
   sound5: 'spam'
 }
-for (let element in band){
+for (let element in band) {
   console.log(element, band[element]);
 }
 
-let  food= {
+let food = {
   meals:
-  [
-    'breakfast', 
-    'second breakfast', 
-    'eleveneses', 
-    'lunch', 
-    'afterneoon tea',
-    'dinner',
-    'super supper'
-]
+    [
+      'breakfast',
+      'second breakfast',
+      'eleveneses',
+      'lunch',
+      'afterneoon tea',
+      'dinner',
+      'super supper'
+    ]
 }
 
 console.log(food.meals[3])
+
+let newArr = 
+[{ name: 'Dora', jobTitle: 'explorer', }, 
+{ name: 'Bob', jobTitle: 'Builder', }, 
+{ name: 'Hip Hop Harry', jobTitle: 'DJ', }]; 
+for (let i = 0; i < newArr.length; i++) 
+{ console.log(newArr[i].name, newArr[i].jobTitle); }
