@@ -71,7 +71,7 @@ boss: 'Mom'
     name: 'Hip Hop Harry',
     jobTitle: 'DJ',
     selfEmployed: false,
-    boss: "Jay Z"
+    boss: 'Jay Z'
   }];
 
 for (let i = 0; i < newArr2.length; i++) {
@@ -84,3 +84,23 @@ for (let i = 0; i < newArr2.length; i++) {
   }
 
 }
+
+function decode(word){
+  let coder = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    
+  };
+
+  const firstLetter= word[0];
+  const position = coder[firstLetter];
+  if (!position){
+    console.log("whoops!")
+  }
+  console.log(word[position]);
+}
+
+decode('mouse ');
+
