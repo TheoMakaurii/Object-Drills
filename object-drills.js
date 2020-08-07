@@ -42,9 +42,45 @@ let food = {
 
 console.log(food.meals[3])
 
-let newArr = 
-[{ name: 'Dora', jobTitle: 'explorer', }, 
-{ name: 'Bob', jobTitle: 'Builder', }, 
-{ name: 'Hip Hop Harry', jobTitle: 'DJ', }]; 
-for (let i = 0; i < newArr.length; i++) 
-{ console.log(newArr[i].name, newArr[i].jobTitle); }
+let newArr =
+  [{ name: 'Dora', jobTitle: 'explorer', },
+  { name: 'Bob', jobTitle: 'Builder', },
+  { name: 'Hip Hop Harry', jobTitle: 'DJ', }];
+for (let i = 0; i < newArr.length; i++) { console.log(newArr[i].name, newArr[i].jobTitle); }
+
+
+
+
+
+let newArr2 =
+  [{
+    name: 'Dora',
+    jobTitle: 'explorer',
+    selfEmployed: false,
+boss: 'Mom'
+  },
+
+  {
+    name: 'Bob',
+    jobTitle: 'Builder',
+    selfEmployed: true,
+    boss: 'self-employed contracter'
+  },
+
+  {
+    name: 'Hip Hop Harry',
+    jobTitle: 'DJ',
+    selfEmployed: false,
+    boss: "Jay Z"
+  }];
+
+for (let i = 0; i < newArr2.length; i++) {
+
+  if(newArr2[i].selfEmployed=== true ) {
+    console.log(`${newArr2[i].name} doesnt report to anybody`)};
+    
+  if (newArr2[i].selfEmployed!== true ) {
+    console.log(`${newArr2[i].name} reports to ${newArr2[i].boss}`);
+  }
+
+}
