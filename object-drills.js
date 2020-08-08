@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const loaf = {
   flour: 300,
@@ -14,7 +14,7 @@ const loaf = {
 
 console.log(loaf.flour);
 console.log(loaf.water);
-console.log(loaf.hydration())
+console.log(loaf.hydration());
 
 let band = {
   sound1: 'foo',
@@ -43,9 +43,9 @@ let food = {
 console.log(food.meals[3])
 
 let newArr =
-  [{ name: 'Dora', jobTitle: 'explorer', },
-  { name: 'Bob', jobTitle: 'Builder', },
-  { name: 'Hip Hop Harry', jobTitle: 'DJ', }];
+  [ { name: 'Dora', jobTitle: 'explorer', },
+    { name: 'Bob', jobTitle: 'Builder', },
+    { name: 'Hip Hop Harry', jobTitle: 'DJ', }];
 for (let i = 0; i < newArr.length; i++) { console.log(newArr[i].name, newArr[i].jobTitle); }
 
 
@@ -57,7 +57,7 @@ let newArr2 =
     name: 'Dora',
     jobTitle: 'explorer',
     selfEmployed: false,
-boss: 'Mom'
+    boss: 'Mom'
   },
 
   {
@@ -102,5 +102,34 @@ function decode(word){
   console.log(word[position]);
 }
 
-decode('mouse ');
+decode('');
 
+const characterSheet =[]
+function createCharacter(name, nickname, race, origin, attack, defense){
+
+  return {
+    name, 
+    nickname, 
+    race, 
+    origin, 
+    attack, 
+    defense,
+    describe(){
+      console.log(`${this.name} is a ${this.race} from ${this.origin}`)
+    }
+  };
+}
+
+let names= ['Gandalf the White', 'Bilbo Baggins', 'Frodo Baggins', 'Aragorn son of Arathorn', 'Legolas'];
+let nicknames= [ 'gandalf', 'bilbo', 'frodo', ' aragorn', 'legolas'];
+let race = ['wizard', 'hobbit', 'hobbit', 'dragon', 'elf'];
+let origin = ['Middle Earth', 'The Shire', 'The Shire', 'Dunnedain', 'Woodland Realm'];
+let attack = [10, 2, 3, 6, 8];
+let defense = [6,1,2,8,5];
+
+for(let i=0; i< names.length; i++){
+  characterSheet.push(createCharacter(names[i], nicknames[i], race[i], 
+    origin[i], attack[i], defense[i]));
+}
+
+console.log(characterSheet);
