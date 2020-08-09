@@ -43,9 +43,9 @@ let food = {
 console.log(food.meals[3])
 
 let newArr =
-  [ { name: 'Dora', jobTitle: 'explorer', },
-    { name: 'Bob', jobTitle: 'Builder', },
-    { name: 'Hip Hop Harry', jobTitle: 'DJ', }];
+  [{ name: 'Dora', jobTitle: 'explorer', },
+  { name: 'Bob', jobTitle: 'Builder', },
+  { name: 'Hip Hop Harry', jobTitle: 'DJ', }];
 for (let i = 0; i < newArr.length; i++) { console.log(newArr[i].name, newArr[i].jobTitle); }
 
 
@@ -76,60 +76,87 @@ let newArr2 =
 
 for (let i = 0; i < newArr2.length; i++) {
 
-  if(newArr2[i].selfEmployed=== true ) {
-    console.log(`${newArr2[i].name} doesnt report to anybody`)};
-    
-  if (newArr2[i].selfEmployed!== true ) {
+  if (newArr2[i].selfEmployed === true) {
+    console.log(`${newArr2[i].name} doesnt report to anybody`)
+  };
+
+  if (newArr2[i].selfEmployed !== true) {
     console.log(`${newArr2[i].name} reports to ${newArr2[i].boss}`);
   }
 
 }
 
-function decode(word){
+function decode(word) {
   let coder = {
     a: 1,
     b: 2,
     c: 3,
     d: 4,
-    
+
   };
 
-  const firstLetter= word[0];
+  const firstLetter = word[0];
   const position = coder[firstLetter];
-  if (!position){
-    console.log("whoops!")
+  if (!position) {
+    console.log('whoops!')
   }
-  console.log(word[position]);
+
 }
 
 decode('');
 
-const characterSheet =[]
-function createCharacter(name, nickname, race, origin, attack, defense){
+const characterSheet = [];
+function createCharacter(name, nickname, race, origin, attack, defense) {
 
   return {
-    name, 
-    nickname, 
-    race, 
-    origin, 
-    attack, 
+    name,
+    nickname,
+    race,
+    origin,
+    attack,
     defense,
-    describe(){
-      console.log(`${this.name} is a ${this.race} from ${this.origin}`)
+    describe() {
+      return `${this.name} is a ${this.race} from ${this.origin}`;
+    },
+    evaluateFight(character) {
+      let x = this.attack - character.defense;
+      let y = character.defense - this.attack;
+      if (x > 0) {
+        x = 0;
+      }
+      else if (y < 0) {
+        y = 'PLAYER VANQUISHED';
+      }
+      return 'Your foe receives {x} damage, and you receive {y} damage';
     }
-  };
-}
+    //  console.log(character1, character2);
 
-let names= ['Gandalf the White', 'Bilbo Baggins', 'Frodo Baggins', 'Aragorn son of Arathorn', 'Legolas'];
-let nicknames= [ 'gandalf', 'bilbo', 'frodo', ' aragorn', 'legolas'];
+
+
+
+  }
+};
+
+
+
+let names = ['Gandalf the White', 'Bilbo Baggins', 'Frodo Baggins', 'Aragorn son of Arathorn', 'Legolas'];
+let nicknames = ['gandalf', 'bilbo', 'frodo', ' aragorn', 'legolas'];
 let race = ['wizard', 'hobbit', 'hobbit', 'dragon', 'elf'];
 let origin = ['Middle Earth', 'The Shire', 'The Shire', 'Dunnedain', 'Woodland Realm'];
 let attack = [10, 2, 3, 6, 8];
-let defense = [6,1,2,8,5];
+let defense = [6, 1, 2, 8, 5];
 
-for(let i=0; i< names.length; i++){
-  characterSheet.push(createCharacter(names[i], nicknames[i], race[i], 
+for (let i = 0; i < names.length; i++) {
+  characterSheet.push(createCharacter(names[i], nicknames[i], race[i],
     origin[i], attack[i], defense[i]));
 }
 
 console.log(characterSheet);
+
+characterSheet.forEach(element => {
+  console.log(element.describe());
+  //console.log(element.describe());
+});
+
+characterSheet.evaluateFight(characterSheet[2]);
+
